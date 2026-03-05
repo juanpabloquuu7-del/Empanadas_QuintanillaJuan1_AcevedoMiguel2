@@ -7,7 +7,7 @@ def imprimir_lista():
         print("Aún no hay empanadas en el comal.")
     else:
         for i, e in enumerate(datos):
-            print(f"[{i}] {e['item']} --- ${e['costo']}")
+            print(f"[{i+1}] {e['nombre']} --- ${e['precio']}")
 
 def capturar_nueva():
     print("\n-- Registro de Empanada --")

@@ -16,3 +16,9 @@ def proceso_editar(indice, nombre, precio):
         bd_empanadas[indice]["costo"] = precio
         return True
     return False
+
+def proceso_eliminar(indice):
+    if 0 <= indice < len(bd_empanadas):
+        bd_empanadas.pop(indice)
+        return True
+    return False

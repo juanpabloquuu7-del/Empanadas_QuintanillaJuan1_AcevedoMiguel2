@@ -1,5 +1,4 @@
 
-
 def menu_principal():
     while True:
         print("\n--- SISTEMA EMPANADAS DOÑA PEPE ---")

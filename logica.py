@@ -1,3 +1,4 @@
+import json
 NOMBRE_ARCHIVO = "empanadas.json"
 
 def cargar_datos():
@@ -9,11 +10,10 @@ def cargar_datos():
         # Si el archivo no existe todavía, devolvemos una lista vacía
         return []
 
-def proceso_guardar(nombre, precio):
-    
-    nueva = {"item": nombre, "costo": precio}
-    bd_empanadas.append(nueva)
-    return True
+def guardar_datos(lista):
+    with open(NOMBRE_ARCHIVO, "w", encoding="utf-8") as f:
+        json.dump(lista, f, indent=4)
+
 
 def proceso_editar(indice, nombre, precio):
    

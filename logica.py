@@ -15,13 +15,10 @@ def guardar_datos(lista):
         json.dump(lista, f, indent=4)
 
 
-def proceso_editar(indice, nombre, precio):
-   
-    if 0 <= indice < len(bd_empanadas):
-        bd_empanadas[indice]["item"] = nombre
-        bd_empanadas[indice]["costo"] = precio
-        return True
-    return False
+def agregar_empanada(nombre, precio):
+    lista = cargar_datos()
+    lista.append({"nombre": nombre, "precio": precio})
+    guardar_datos(lista)
 
 def proceso_eliminar(indice):
     if 0 <= indice < len(bd_empanadas):

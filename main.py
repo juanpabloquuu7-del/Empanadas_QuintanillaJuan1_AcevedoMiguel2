@@ -1,4 +1,3 @@
-import interfaz
 
 def menu_principal():
     while True:
@@ -8,6 +7,20 @@ def menu_principal():
         print("3. Editar")
         print("4. Eliminar")
         print("5. Salir")
-        
+
         op = input("Seleccione: ")
 
+        if op == "1": 
+            pass
+        elif op == "2":
+            pass 
+        elif op == "3":
+            pass 
+        elif op == "4":
+            pass 
+        elif op == "5": 
+            print("Cerrando caja... ¡Adiós!")
+            break
+
+
+    menu_principal()

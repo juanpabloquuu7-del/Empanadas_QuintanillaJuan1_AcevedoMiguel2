@@ -7,13 +7,20 @@ def imprimir_lista():
         print("Aún no hay empanadas en el comal.")
     else:
         for i, e in enumerate(datos):
-            print(f"[{i+1}] {e['nombre']} --- ${e['precio']}")
+            print(f"[{i+1}] {e['nombre']} --- ${e['precio']} {e['ingredientes']} {e['disponibilidad']}")
 
 def capturar_nueva():
-    print("\n-- Registro de Empanada --")
-    n = input("¿Qué sabor es?: ")
-    p = input("¿A cuánto la va a dar?: ")
-    logica.agregar_empanada(n, p)
+    print("\n-- Registro de Empanada --").strip
+    n = input("¿Qué sabor es?: ").strip
+    p = input("¿A cuánto la va a dar?: ").strip
+    i = input("Que ingredientes lleva: ").strip
+    while True:
+        d = input("Disponibles ? (Si/No)").capitalize().strip
+        if d != "Si" or "No":
+            input ("Ingrese Si o No")
+        else :
+            break
+    logica.agregar_empanada(n,p,i,d)
     print("¡Listo! Ya se agregó.")
 
 def capturar_edicion():
@@ -21,7 +28,14 @@ def capturar_edicion():
     idx = int(input("\nEscribe el número de la que vas a cambiar: "))
     n = input("Nombre nuevo: ")
     p = input("Precio nuevo: ")
-    if logica.editar_empanada(idx, n, p):
+    i = input("Que ingredientes lleva: ").strip
+    while True:
+        d = input("Disponibles ? (Si/No)").capitalize().strip
+        if d != "Si" or "No":
+            input ("Ingrese Si o No")
+        else :
+            break
+    if logica.editar_empanada(idx, n, p,i,d):
         print("¡Cambio guardado!")
     else:
         print("Ese número no existe.")

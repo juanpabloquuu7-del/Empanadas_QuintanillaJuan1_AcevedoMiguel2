@@ -8,3 +8,11 @@ def proceso_guardar(nombre, precio):
     nueva = {"item": nombre, "costo": precio}
     bd_empanadas.append(nueva)
     return True
+
+def proceso_editar(indice, nombre, precio):
+   
+    if 0 <= indice < len(bd_empanadas):
+        bd_empanadas[indice]["item"] = nombre
+        bd_empanadas[indice]["costo"] = precio
+        return True
+    return False

@@ -15,3 +15,13 @@ def capturar_nueva():
     p = input("¿A cuánto la va a dar?: ")
     logica.proceso_guardar(n, p)
     print("¡Listo! Ya se agregó.")
+
+def capturar_edicion():
+    imprimir_lista()
+    idx = int(input("\nEscribe el número de la que vas a cambiar: "))
+    n = input("Nombre nuevo: ")
+    p = input("Precio nuevo: ")
+    if logica.proceso_editar(idx, n, p):
+        print("¡Cambio guardado!")
+    else:
+        print("Ese número no existe.")

@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "carne",
+        "precio": "100"
+    },
+    {
+        "nombre": "pollo",
+        "precio": "250000"
+    },
+    {
+        "nombre": "colombiaana",
+        "precio": "4000"
+    }
+]

@@ -1,19 +1,19 @@
 import logica
 
 def imprimir_lista():
-    datos = logica.obtener_todo()
+    datos = logica.cargar_datos()
     print("\n>>>> CATÁLOGO DE DOÑA PEPE <<<<")
     if not datos:
         print("Aún no hay empanadas en el comal.")
     else:
         for i, e in enumerate(datos):
-            print(f"[{i}] {e['item']} --- ${e['costo']}")
+            print(f"[{i+1}] {e['nombre']} --- ${e['precio']}")
 
 def capturar_nueva():
     print("\n-- Registro de Empanada --")
     n = input("¿Qué sabor es?: ")
     p = input("¿A cuánto la va a dar?: ")
-    logica.proceso_guardar(n, p)
+    logica.agregar_empanada(n, p)
     print("¡Listo! Ya se agregó.")
 
 def capturar_edicion():
@@ -21,7 +21,7 @@ def capturar_edicion():
     idx = int(input("\nEscribe el número de la que vas a cambiar: "))
     n = input("Nombre nuevo: ")
     p = input("Precio nuevo: ")
-    if logica.proceso_editar(idx, n, p):
+    if logica.editar_empanada(idx, n, p):
         print("¡Cambio guardado!")
     else:
         print("Ese número no existe.")

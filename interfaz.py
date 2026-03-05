@@ -1,7 +1,7 @@
 import logica
 
 def imprimir_lista():
-    datos = logica.obtener_todo()
+    datos = logica.cargar_datos()
     print("\n>>>> CATÁLOGO DE DOÑA PEPE <<<<")
     if not datos:
         print("Aún no hay empanadas en el comal.")

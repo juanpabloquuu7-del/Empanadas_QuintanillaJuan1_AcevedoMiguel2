@@ -1,5 +1,5 @@
 import json
-NOMBRE_ARCHIVO = "empanadas.json"
+NOMBRE_ARCHIVO = "archivo.json"
 
 def cargar_datos():
     try:

@@ -14,18 +14,18 @@ def guardar_datos(lista):
     with open(NOMBRE_ARCHIVO, "w", encoding="utf-8") as f:
         json.dump(lista, f, indent=4)
 
-def editar_empanada(indice, nombre, precio):
+def editar_empanada(indice, nombre, precio,ingredeintes,disponibilidad):
     lista = cargar_datos()
     if 0 <= indice < len(lista):
-        lista[indice] = {"nombre": nombre, "precio": precio}
+        lista[indice] = {"nombre": nombre, "precio": precio, "ingredientes": ingredeintes, "disponibilidad": disponibilidad}
         guardar_datos(lista)
         return True
     return False
 
 
-def agregar_empanada(nombre, precio):
+def agregar_empanada(nombre, precio,ingredeintes,disponibilidad):
     lista = cargar_datos()
-    lista.append({"nombre": nombre, "precio": precio})
+    lista.append({"nombre": nombre, "precio": precio, "ingredientes": ingredeintes, "disponibilidad": disponibilidad})
     guardar_datos(lista)
 
 def proceso_eliminar(indice):
